@@ -34,14 +34,19 @@ void insertionSort(T *arr, int size) {
 // Performs the insertion sort algorith on a vector.
 //
 // @param A, a vector of T elements.
+// complexity: insertion sort has a complexity of O(n^2)
 // =================================================================
 template <class T>
-void insertionSort(std::vector<T> &v) {
+int insertionSort(std::vector<T> &v) {
+  int contador = 0;
 	for(int i = 1; i < v.size(); i++){
 		for(int j = i; j > 0 && v[j] < v[j - 1]; j--){
 			swap(v, j, j - 1);
+      contador++;
 		}
 	}
+  return contador;
 }
 
 #endif /* INSERTION_H */
+
