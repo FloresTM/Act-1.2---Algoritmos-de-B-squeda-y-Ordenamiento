@@ -1,7 +1,7 @@
 // =================================================================
 //
 // File: insertion.h
-// Author: Pedro Perez
+// Author: Sebastian Flores
 // Description: This file contains the implementation of the
 //				insertion sort.
 //
