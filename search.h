@@ -1,11 +1,11 @@
 // =================================================================
 //
 // File: search.h
-// Author: Pedro Perez
+// Author: Sebastian Flores Lemus
 // Description: This file contains the implementations of the
 //				sequential and binary search algorithms.
 //
-// Copyright (c) 2020 by Tecnologico de Monterrey.
+// Copyright (c) 2022 by Tecnologico de Monterrey.
 // All Rights Reserved. May be reproduced for any non-commercial
 // purpose.
 // =================================================================
@@ -24,13 +24,15 @@
 //		   is not found in the vector.
 // =================================================================
 template <class T>
-int sequentialSearch(const std::vector<T> &v, T key) {
+std::pair <int, int> sequentialSearch(const std::vector<T> &v, T key) {
+  int contador = 0;
 	for (int i = 0; i < v.size(); i++) {
+    contador++;
 		if (v[i] == key) {
-			return i;
+			return std::pair <int, int> (i,contador);
 		}
 	}
-	return -1;
+	return std::pair <int, int> (-1,contador);
 }
 
 // =================================================================
@@ -42,22 +44,23 @@ int sequentialSearch(const std::vector<T> &v, T key) {
 //		   is not found in the vector.
 // =================================================================
 template <class T>
-int binarySearch(const std::vector<T> &v, T key) {
-	int low, high, mid;
+std::pair <int, int> binarySearch(const std::vector<T> &v, T key) {
+	int contador = 0, low, high, mid;
 
 	low = 0;
 	high = v.size() - 1;
 	while (low <= high) {
+    contador++;
 		mid = low + ((high - low) / 2); // mid = (high + low) / 2;
 		if (key == v[mid]) {
-			return mid;
+			return std::pair <int, int> (mid,contador);
 		} else if (key < v[mid]) {
 			high = mid - 1;
 		} else {
 			low = mid + 1;
 		}
 	}
-	return -1;
+	return std::pair <int, int> (-1,contador);
 }
 
 // =================================================================
