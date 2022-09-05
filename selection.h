@@ -1,7 +1,7 @@
 // =================================================================
 //
 // File: selection.h
-// Author: Pedro Perez
+// Author: Sebastian Flores
 // Description: This file contains the implementation of the
 //				bubble sort.
 //
@@ -43,10 +43,11 @@ void selectionSort(T *arr, int size) {
 // Performs the selection sort algorithm on a vector.
 //
 // @param A, a vector of T elements.
+// complexity: selection sort has a complexity of O(n^2)
 // =================================================================
 template <class T>
-void selectionSort(std::vector<T> &v) {
-	int pos;
+int selectionSort(std::vector<T> &v) {
+	int pos, contador = 0;
 
 	for(int i = v.size() - 1; i > 0; i--){
 		pos = 0;
@@ -58,8 +59,11 @@ void selectionSort(std::vector<T> &v) {
 
 		if (pos != i){
 			swap(v, i, pos);
+      contador++;
 		}
 	}
+  return contador;
 }
 
 #endif /* SELECTION_H */
+
