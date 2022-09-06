@@ -22,6 +22,7 @@
 // @param key, the element to search.
 // @return the index of the searched element, -1 in case the element
 //		   is not found in the vector.
+// compelxity: O(n)
 // =================================================================
 template <class T>
 std::pair <int, int> sequentialSearch(const std::vector<T> &v, T key) {
@@ -42,6 +43,7 @@ std::pair <int, int> sequentialSearch(const std::vector<T> &v, T key) {
 // @param key, the element to search.
 // @return the index of the searched element, -1 in case the element
 //		   is not found in the vector.
+// complexity: O(log n)
 // =================================================================
 template <class T>
 std::pair <int, int> binarySearch(const std::vector<T> &v, T key) {
@@ -72,6 +74,7 @@ std::pair <int, int> binarySearch(const std::vector<T> &v, T key) {
 // @param key, the element to search.
 // @return the index of the searched element, -1 in case the element
 //		   is not found in the vector.
+// complexity:  O(log n)
 // =================================================================
 template <class T>
 int binaryRSearch(const std::vector<T> &v, int low, int high, T key) {
